@@ -1,0 +1,21 @@
+package application;
+import java.sql.*;
+public class Mysqlconn{
+	public Connection  c;
+	public Statement  s;
+	public Mysqlconn()
+	{
+		 try
+   	  {
+   		  Class.forName("com.mysql.jdbc.Driver");//register mysql driver
+   		  c=DriverManager.getConnection("jdbc:mysql:///EmployeeManagement","root","Nishu@123");
+   		//System.out.println("Connected to the database");
+   		s=c.createStatement();
+   	  }catch(Exception e)
+   	  {
+   		e.printStackTrace();
+   		System.out.println("Oops Error!");
+   	  }
+	
+	}
+}
